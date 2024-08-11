@@ -1,4 +1,13 @@
 
+.main-header{
+    background-color: rgba(0, 0, 0, .5);
+    background-image: url("images/USC TAC Web Background.png");
+    background-size: cover;
+    background-blend-mode: multiply;
+    padding-bottom: 30px; 
+}
+
+/*
 .blue{
     color: blue;
 }
@@ -14,12 +23,16 @@ h1{
     font-size: 30px;
 }
 
+h2{
+    font-size: 20px;
+}
+
 body { 
     color: black;
 }
 
 
-
+*/
 
 
 
