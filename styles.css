@@ -13,8 +13,24 @@ html, body{
     padding: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto/9;
+}
+
+.section {
+    width: 100vw;
+    height: 40vh;
+    background-color: red;
+    font-size: large;
+    color: gold;
+    text-align: center;
+    margin: 100px 5px;
+}
+
 /* Header Styling 
------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------*/
 .nav ul {
     margin: 0;
 }
@@ -72,18 +88,29 @@ html, body{
 }
 
 /* End of Header Styling 
------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------*/
 
 /*Home Page Styling
------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------*/
 
 .welcome_img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     padding: 50px;
-    width: 1150px;
+    width: 1200px;
 }
+
+.home-body {
+    background-color: white;
+    /*background-image: url("images/tac_banner2.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+/*End of Home Page Styling
+-----------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
