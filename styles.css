@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+JP:wght@100..900&family=Sankofa+Display&display=swap');
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500;
@@ -11,6 +14,7 @@
 html, body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 img {
@@ -19,18 +23,27 @@ img {
     width: auto/9;
 }
 
+
 .section {
     width: 100vw;
-    height: 40vh;
+    height: 100vh;
     background-color: red;
     font-size: large;
     color: gold;
     text-align: center;
-    margin: 100px 5px;
+    transform: translate(0px, -190px);
+    
 }
 
 /* Header Styling 
------------------------------------------------------------------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+.header-logo {
+    padding: 10px;
+    width: 110px;
+}
+
 .nav ul {
     margin: 0;
 }
@@ -40,58 +53,56 @@ img {
 }
 
 .nav a {
-    font-family: 'Lemon/Milk light', sans-serif;
-    font-size: 21px;
-    font-weight: 20;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 20px;
 
     display: inline-block; 
     padding: .5em;
+    /*padding-top: 1em;*/
     color: white;
     text-decoration: none;
 }
 
 .nav a:hover {
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(199, 34, 34, 0.3);
 }
 
 .main-nav {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid rgba(255,255,255, .3);
+    text-align: right;
+    font-size: 2em;
+    padding: 0 2%;
 }
 
 .main-nav li{
-    padding: 0 5%;
+    padding: 0 0%; 
 }
 
 .main-header{
     background-color: rgba(0, 0, 0, .5);
-    background-image: url("images/USC TAC Web Background.png");
+    /*background-image: url("images/USC TAC Web Background.png");*/
     background-size: cover;
     background-blend-mode: multiply;
-    padding-bottom: 20px; 
-}
+    position: fixed;
+    
+    
 
-.header-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    width: 215px; 
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
 
-.band-name {
-    text-align: center;
-    margin: 0;
-    font-size: 3em;
+    width: 100%;
+    z-index: 1;
 }
 
 /* End of Header Styling 
------------------------------------------------------------------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
 
 /*Home Page Styling
------------------------------------------------------------------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
 
 .welcome_img {
     display: block;
@@ -102,19 +113,102 @@ img {
 }
 
 .home-body {
-    background-color: white;
-    /*background-image: url("images/tac_banner2.jpg);*/
+    /*background-color: white;*/
+    background-image: url("images/Homepage_bg.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: top;
     background-attachment: scroll;
+    overflow: hidden;
 }
 
 /*End of Home Page Styling
------------------------------------------------------------------------------------------------------------------------------------------*/
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+/*Flexbox Styling
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
+@media print{
+    .page-break-after{
+        page-break-after: always;
+    }
+}
+
+.chracter-container {
+    display: flex;
+    background-color: black;
+    
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    
+    box-sizing: border-box;
+    justify-content: flex-end;
+    position: relative;
+
+    page-break-after: always;
+}
 
 
+.home-chracter {
+    height:100%;
+    width:100%;
+    max-width: 100%;
+    transform: translate(190px);
+}
+
+.welcome-container { 
+    display: flex;
+
+    height: 5vh;
+    width: 100%;
+
+    transform: translate(0px,-605px);
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-box {
+    height: auto;
+    max-width:100%;
+    
+    transform: translate(-20px,0px);
+}
+
+.title-container {
+    display: flex;
+
+    height: 15vh;
+    width: 100%;
+    
+    transform: translate(0px,-620px);
+    align-items: center;
+    justify-content: center;
+}
+
+.trojan-box{
+    height: auto;
+    max-width:100%;
+    transform: translate(70px,0px);
+}
+
+.anime-box{
+    height: auto;
+    max-width:100%; 
+}
+
+.culture-box{
+    height: auto;
+    max-width:100%;
+    transform: translate(-70px,0px);
+}
 
 
+/* End of Flexbox Styling
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
 
 
 
