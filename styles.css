@@ -3,8 +3,6 @@
 
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 500;
@@ -23,16 +21,99 @@ img {
     width: auto/9;
 }
 
+a {
+    color: red;
+}
 
-.section {
+.meeting-info-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    /*transform: translate(0px, -190px);  */
+}
+
+.meetings_fg_img {
+    transform: translate(0px, -25px);
+}
+
+.about-section-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Ensure video stays behind content */
+    transform: translate(-50%, -50%);
+    
+}
+
+.section-1 {
+    position: relative;
+    z-index: 1; /* Content stays above the video */
+    color: white; /* Example text color */
+    text-align: center;
+}
+
+.homepage_content {
+    position: absolute;
+    justify-content: cover;
+}
+
+.tac-about {
+    position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: red;
-    font-size: large;
-    color: gold;
-    text-align: center;
-    transform: translate(0px, -190px);
+    background-color: rgb(255, 255, 255);
     
+    z-index: 1;
+
+    transform: translate(0px, 0px);
+
+    font-size: large;
+    color: black;
+    text-align: center; 
+    
+
+    margin: 0;
+    padding: 0;
+}
+
+.about-div {
+    border: 2px solid black;
+    align-items: center;
+    transform: scale(0.8);
+    background-color: black; 
+}
+
+.about-img {
+    display: flex;
+    position: static;
+    align-items: center;
+    padding: 50px 50px;
+    transform: translate(0px, -40px);
+    transform: scale(.9);
+}
+
+.about-header {
+    padding: 20px;
+    color: white;
+}
+
+.club-info {
+    
+    border: 2px solid black;
+    transform: translate(0px, -80px);
+    color: white;
+
+}
+    
+@media print{
+    .page-break-after{
+        page-break-after: always;
+    }
 }
 
 /* Header Styling 
@@ -40,8 +121,9 @@ img {
 */
 
 .header-logo {
-    padding: 10px;
-    width: 110px;
+    padding: 7px;
+    width: 80px;
+    z-index: 1;
 }
 
 .nav ul {
@@ -54,14 +136,15 @@ img {
 
 .nav a {
     font-family: "IBM Plex Sans", sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 20px;
 
     display: inline-block; 
-    padding: .5em;
+    padding: 0em 0.8em;
     /*padding-top: 1em;*/
     color: white;
     text-decoration: none;
+    z-index: 1;
 }
 
 .nav a:hover {
@@ -70,7 +153,7 @@ img {
 
 .main-nav {
     text-align: right;
-    font-size: 2em;
+    font-size: 0.5em;
     padding: 0 2%;
 }
 
@@ -84,13 +167,11 @@ img {
     background-size: cover;
     background-blend-mode: multiply;
     position: fixed;
-    
-    
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 5px;
+    /*padding: 5px 5px;*/
 
     width: 100%;
     z-index: 1;
@@ -114,7 +195,7 @@ img {
 
 .home-body {
     /*background-color: white;*/
-    background-image: url("images/Homepage_bg.png");
+    background-image: url("images/school-rooftop-bg-lp.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
@@ -129,11 +210,16 @@ img {
 /*Flexbox Styling
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
-@media print{
-    .page-break-after{
-        page-break-after: always;
-    }
+
+.opening-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
+
+    overflow: hidden;
 }
+
 
 .chracter-container {
     display: flex;
@@ -147,15 +233,18 @@ img {
     justify-content: flex-end;
     position: relative;
 
-    page-break-after: always;
+    overflow: hidden;
 }
 
 
 .home-chracter {
-    height:100%;
-    width:100%;
+    height:auto;
+    max-height: 100%;
+
+    width:auto;
     max-width: 100%;
-    transform: translate(190px);
+    
+    transform: translate(120px);
 }
 
 .welcome-container { 
@@ -183,7 +272,7 @@ img {
     height: 15vh;
     width: 100%;
     
-    transform: translate(0px,-620px);
+    transform: translate(0px,-600px);
     align-items: center;
     justify-content: center;
 }
@@ -211,10 +300,9 @@ img {
 */
 
 
-
-
-
-
+/* Start of Rules page Styling
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
 
 
 
