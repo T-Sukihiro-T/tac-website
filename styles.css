@@ -120,6 +120,11 @@ a {
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
+header {
+   position: relative; 
+   z-index: 10;
+}
+
 .header-logo {
     padding: 7px;
     width: 80px;
@@ -148,7 +153,7 @@ a {
 }
 
 .nav a:hover {
-    background-color: rgba(199, 34, 34, 0.3);
+    color: rgba(199, 34, 34);
 }
 
 .main-nav {
@@ -171,10 +176,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /*padding: 5px 5px;*/
 
     width: 100%;
-    z-index: 1;
 }
 
 /* End of Header Styling 
@@ -244,7 +247,7 @@ a {
     width:auto;
     max-width: 100%;
     
-    transform: translate(120px);
+    transform: translate(190px);
 }
 
 .welcome-container { 
