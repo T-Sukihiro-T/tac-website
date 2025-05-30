@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%; margin: 0; display: flex; flex-direction: column;">
     <head>
         <meta charset="utf-8"> <!--Sets universial character type for all page texts-->
         
@@ -7,59 +7,137 @@
         <meta name="viewport" content="width=device-width, initial scale=1">
         
         <!--Title for current page -->
-        <title> TAC E-BOARD </title>
+        <title> TAC E-BOARD! </title>
+
+        <link rel="icon" type="image/x-icon" href="favicon_data/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon_data/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_data/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_data/favicon-16x16.png">
+        <link rel="manifest" href="favicon_data/site.webmanifest">
+        <link rel="mask-icon" href="favicon_data/safari-pinned-tab.svg" color="#5bbad5">
+        <link href="https://fonts.cdnfonts.com/css/lemonmilk" rel="stylesheet">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="stylesheet" href="styles.css">
     </head>
-    <body>   
-        <ol>
-            <li>
-                Tammy
+    <body class = "home-body" stlye="height: 100%; margin: 0; display: flex; flex-direction: column;">
+        <div class="fixed-bg-alt">
+            <div class="bg-overlay-alt"></div>
+        </div>
+        
+        <header class = "main-header-alt">
 
+            <div class="header-logo"> <a href = "index.html"> <img class = "header-logo" src = "images/tac_logo.png"> </a> </div>
+
+            <nav class="nav main-nav">
                 <ul>
-                    - Blank
+                    <li><a href="index.html#about-row-1">About</a></li>
+                    <li><a href="https://discord.gg/6feM8EuE" target="_blank">Discord</a></li>
+                    <li><a href="tac_eboard.html">E-Board</a></li>
+                    <li><a href="tac_socials.html">Socials</a></li>
+                    <li><a href="rules.html">Da Rules</a></li>
+                    <li><a href="tac_faq.html">FAQ</a></li>
                 </ul>
-            </li>
+            </nav>
 
-            <li>
-                Edward
+        </header> 
+        
+        <main>
+            <section class="centered-section-alt">
+                <h2 class="section-title"
+                style="font-family: 'Lemon Milk', sans-serif; font-size: 2rem; margin-bottom: 0.5rem; 
+                color: #fff; letter-spacing: 1px;text-transform: uppercase;">
+                MEET OUR E-BOARD!</h2>
+                <div class="section-bar" style="width: 80px;
+                    height: 3px;
+                    background-color: #990000;
+                    margin: 0 auto 1.5rem auto;"></div>
+                <p class="section-text" style="font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: #fff;">
+                        Here are the smexy smexy demons that keep our club afloat! (No you did not see 
+                        us on Figuroa and Manchester last night ^~^)
+                </p>
 
-                <ul>
-                    - Blank
-                </ul>
-            </li>
 
-            <li>
-                Sahil
+                <p style="font-size: 1.1rem;
+                    line-height: 1.6;
+                    color: #fff;">
+                    Feel free to reach out to any of us on our discord server for any 
+                    pressing questions comments or concerns! (especially concerns!)
+                </p>
+            </section>
 
-                <ul>
-                    - Blank
-                </ul>
-            </li>
+            <section class="eboard-scrollbar">
+                <div class="board-scroll-wrapper">
+                    <div id="board-cards" class="board-card-container">
+                        
+                        <div class="discord-card">
+                            <img src="images/juehue.png" class="discord-avatar">
+                            <div class="discord-info">
+                                <h3 class="discord-username">#reallifetomoya</h3>
+                                <p class="discord-role">President</p>
+                            </div>
+                        </div>
 
-            <li>
-                Lohith 
+                        <div class="discord-card">
+                            <img src="images/ed.png" class="discord-avatar">
+                            <div class="discord-info">
+                                <h3 class="discord-username">#superp2222</h3>
+                                <p class="discord-role">Vice President</p>
+                            </div>
+                        </div>
 
-                <ul>
-                    - Blank
-                </ul>
-            </li>
+                        <div class="discord-card">
+                            <img src="images/discord.png" class="discord-avatar">
+                            <div class="discord-info">
+                                <h3 class="discord-username">#renamed<br>_successfully</h3>
+                                <p class="discord-role">Secretary</p>
+                            </div>
+                        </div>
 
-            <li>
-                Christian (Me)
+                        <div class="discord-card">
+                            <img src="images/kana.png" class="discord-avatar">
+                            <div class="discord-info">
+                                <h3 class="discord-username">#hayamakana</h3>
+                                <p class="discord-role">Treasurer</p>
+                            </div>
+                        </div>
 
-                <ul>
-                    - Blank
-                </ul>
-            </li>
+                        <div class="discord-card">
+                            <img src="images/luca.jpeg" class="discord-avatar">
+                            <div class="discord-info">
+                                <h3 class="discord-username">#tangyono</h3>
+                                <p class="discord-role">Social Chair</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <li>
-                Adheesh
+                <div id="bio-section" class="discord-bio hidden">
+                    <div class="bio-header">
+                        <span id="bio-username">#username</span>
+                    </div>
+                    <div class="bio-content" id="bio-content">
+                        <!-- Bio will be injected here -->
+                    </div>
+                </div>
+            </section>
 
-                <ul>
-                    - Blank
-                </ul>
-            </li>
-        </ol>
+
+            <script src = "main.js"></script>
+        </main>
+
+        <footer class="tac-footer">
+            USC Trojan Anime Culture &mdash; Fight On!
+
+            <div class="footer-left">
+                <img src="images/tac_logo.png" alt="TAC Logo">
+            </div>
+            <div class="footer-right">
+                © 2025 USC Trojan Anime Culture. All Rights Reserved.
+            </div>
+        </footer>
     </body>
 </html>

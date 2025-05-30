@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+JP:wght@100..900&family=Sankofa+Display&display=swap');
 @import url('https://fonts.cdnfonts.com/css/lemonmilk');
 
+.lemon-title {
+  font-family: 'Lemon/Milk', sans-serif;
+}
 
 * {
     box-sizing: border-box;
@@ -12,7 +15,14 @@
 html, body{
     margin: 0;
     padding: 0;
+    height: auto;
+    min-height: 100vh;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+main {
+  flex: 1;
 }
 
 img {
@@ -23,97 +33,6 @@ img {
 
 a {
     color: red;
-}
-
-.meeting-info-section {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    /*transform: translate(0px, -190px);  */
-}
-
-.meetings_fg_img {
-    transform: translate(0px, -25px);
-}
-
-.about-section-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1; /* Ensure video stays behind content */
-    transform: translate(-50%, -50%);
-    
-}
-
-.section-1 {
-    position: relative;
-    z-index: 1; /* Content stays above the video */
-    color: white; /* Example text color */
-    text-align: center;
-}
-
-.homepage_content {
-    position: absolute;
-    justify-content: cover;
-}
-
-.tac-about {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
-    
-    z-index: 1;
-
-    transform: translate(0px, 0px);
-
-    font-size: large;
-    color: black;
-    text-align: center; 
-    
-
-    margin: 0;
-    padding: 0;
-}
-
-.about-div {
-    border: 2px solid black;
-    align-items: center;
-    transform: scale(0.8);
-    background-color: black; 
-}
-
-.about-img {
-    display: flex;
-    position: static;
-    align-items: center;
-    padding: 50px 50px;
-    transform: translate(0px, -40px);
-    transform: scale(.9);
-}
-
-.about-header {
-    padding: 20px;
-    color: white;
-}
-
-.club-info {
-    
-    border: 2px solid black;
-    transform: translate(0px, -80px);
-    color: white;
-
-}
-    
-@media print{
-    .page-break-after{
-        page-break-after: always;
-    }
 }
 
 /* Header Styling 
@@ -167,8 +86,7 @@ header {
 }
 
 .main-header{
-    background-color: rgba(0, 0, 0, .5);
-    /*background-image: url("images/USC TAC Web Background.png");*/
+    background-color: transparent;
     background-size: cover;
     background-blend-mode: multiply;
     position: fixed;
@@ -178,6 +96,26 @@ header {
     align-items: center;
 
     width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.main-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.main-header-alt{
+    background-color: transparent;
+    background-size: cover;
+    background-blend-mode: multiply;
+    position: fixed;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* End of Header Styling 
@@ -188,66 +126,74 @@ header {
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
-.welcome_img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 50px;
-    width: 1200px;
+.home-body {
+    background-repeat: no-repeat;
+    background-size: cover;     
+    background-position: top;
+    background-attachment: scroll; 
+    overflow-x: hidden;
 }
 
-.home-body {
-    /*background-color: white;*/
-    background-image: url("images/school-rooftop-bg-lp.png");
+.fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/home-image.jpg");
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    background-attachment: scroll;
-    overflow: hidden;
+    background-size: cover; 
+    background-position: 50% 50%;
+    z-index: -1;
+    background-size:110%;
+    transform:scale(1.1);
+    pointer-events: none;
+    transition: background-position 0.1s ease;
+}
+
+.bg-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0; 
+    transition: opacity 0.1s linear; 
+    z-index: 1;
+    pointer-events: none;
+}
+
+.fixed-bg-alt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/home-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: 50% 50%;
+    z-index: -1;
+    background-size:110%;
+    filter:blur(10px) brightness(0.5);
+    transform:scale(1.1);
+    pointer-events: none;
+    transition: background-position 0.1s ease;
 }
 
 /*End of Home Page Styling
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
-/*Flexbox Styling
+/*Flexbox Styling for Landing Page
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
 .opening-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     min-height: 100vh;
 
     overflow: hidden;
-}
-
-
-.chracter-container {
-    display: flex;
-    background-color: black;
-    
-    height: 100vh;
-    width: 100%;
-    max-width: 100%;
-    
-    box-sizing: border-box;
-    justify-content: flex-end;
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.home-chracter {
-    height:auto;
-    max-height: 100%;
-
-    width:auto;
-    max-width: 100%;
-    
-    transform: translate(190px);
 }
 
 .welcome-container { 
@@ -255,18 +201,15 @@ header {
 
     height: 5vh;
     width: 100%;
-
-    transform: translate(0px,-605px);
     
     align-items: center;
     justify-content: center;
 }
 
 .welcome-box {
-    height: auto;
+    align-items: center;
+    transform: translate(0px, 370px);
     max-width:100%;
-    
-    transform: translate(-20px,0px);
 }
 
 .title-container {
@@ -275,7 +218,7 @@ header {
     height: 15vh;
     width: 100%;
     
-    transform: translate(0px,-600px);
+    transform: translate(0px, 360px);
     align-items: center;
     justify-content: center;
 }
@@ -283,7 +226,7 @@ header {
 .trojan-box{
     height: auto;
     max-width:100%;
-    transform: translate(70px,0px);
+    transform: translate(60px,0px);
 }
 
 .anime-box{
@@ -294,19 +237,406 @@ header {
 .culture-box{
     height: auto;
     max-width:100%;
-    transform: translate(-70px,0px);
+    transform: translate(-60px,0px);
 }
 
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.arrow-down {
+    font-size: 1.2rem;
+    color: #FFCC00;
+    animation: bounce-arrow 1.5s infinite ease-in-out;
+}
 
 /* End of Flexbox Styling
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
+/* Meetings Info Section Styling
+-----------------------------------------------------------------------------------------------------------------------------------------
+*/
+.meeting-info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
 
-/* Start of Rules page Styling
+.meeting-info{
+    font-size: 75px;
+    margin-bottom: 0.5rem;
+    color: #fff; 
+    font-family: 'Lemon Milk'; font-weight: bold;
+}
+
+.meeting-note {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    color: #ccc;
+    text-align: center;
+}
+
+/* End of Meeting Info Section Styling
 -----------------------------------------------------------------------------------------------------------------------------------------
 */
 
+.about-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 12rem; 
+    padding: 2rem 5vw;
+    flex-wrap: wrap; 
+}
+
+.image-container {
+    flex: 1;
+    max-width: 700px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.side-section {
+    flex: 2;
+    max-width: 700px;
+    padding-left:100px;
+}
+
+.section-title {
+    font-family: 'Lemon Milk', sans-serif; font-size: 2rem; margin-bottom: 0.5rem; 
+            color: #fff; letter-spacing: 1px;text-transform: uppercase;
+}
+
+.section-bar {
+    width: 100px;
+    height: 3px;
+    background-color: #990000; 
+    margin-bottom: 1rem;
+}
+
+/*Cardinal: #990000 Gold: #FFCC00 */
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #ccc; 
+}
+
+.centered-section {
+    max-width: 700px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.centered-section-alt {
+    padding-top: 100px;
+    max-width: 700px;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+/*Footer Styling */
+
+.tac-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-family: 'Lemon Milk', sans-serif;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 5;
+}
+
+.footer-left img {
+    height: 40px; 
+}
+
+.footer-right {
+    font-size: 0.75rem;
+    color: #ccc;
+    text-align: right;
+}
+
+
+/* Eboard Page Styling
+----------------------------------------------------------
+*/
+
+.board-scroll-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 5px;
+    overflow: visible;  
+}
+
+.board-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    width: 100%;             
+}
+
+.board-scroll-wrapper::-webkit-scrollbar {
+    display: none;             
+}
+
+.discord-card {
+    display: flex;
+    align-items: center;
+    background: rgba(54, 57, 63, 0.8); 
+    padding: 1rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    color: white;
+    margin: 1rem auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.discord-card:hover {
+    background: rgba(21, 23, 26, 0.8); 
+}
+
+.discord-card.selected {
+  background: rgba(88, 101, 242, 0.9); 
+  transform: scale(1.03);
+  box-shadow: 0 0 12px #5865F2;
+}
+
+.discord-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid #5865F2;
+}
+
+.discord-username {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.discord-role {
+  margin: 0;
+  color: #b9bbbe;
+  font-size: 0.9rem;
+}
+
+/* Bio Section styling */
+
+.discord-bio {
+  background: rgba(54, 57, 63, 0.9);
+  color: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.bio-header {
+  font-weight: bold;
+  color: #b9bbbe;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.bio-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #dcddde;
+}
+
+.hidden {
+  display: none;
+}
+
+/* End of Eboard Page Styling
+----------------------------------------------------------------------
+*/
+
+/* Socials Page Styling */
+
+.discord-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding-left: 150px;
+}
+
+.discord-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2f3136;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #fff;
+  width: 400px;
+  height: 400px;
+}
+
+.discord-block:hover {
+    background: rgba(21, 23, 26, 0.8); 
+    transform: scale(1.05);
+}
+
+.discord-block img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.discord-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+#server-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.instagram-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 8px;
+  overflow: hidden; 
+  padding: 10px;
+}
+
+.instagram-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.username {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.verified {
+  margin-left: 5px;
+  color: #0095f6; 
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.instagram-grid img,
+.instagram-grid video {
+  width: 100%;
+  display: block;
+}
+
+.instagram-grid img:hover,
+.instagram-grid video:hover {
+  transform: scale(1.05);
+}
+
+.faq-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  padding-top:100px;
+  padding-bottom:100px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #ffcc00;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.faq-box {
+  background: rgba(21, 23, 26, 0.8);
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.faq-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.faq-box h3 {
+  margin: 0 0 8px;
+  font-size: 1.1em;
+  color: #ffcc00;
+}
+
+.faq-box p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95em;
+}
+
+.faq-box a {
+  color: #ffcc00;
+  text-decoration: underline;
+}
 
 
 
