@@ -21,6 +21,11 @@ html, body{
     scroll-behavior: smooth;
 }
 
+body{
+  display:flex;
+  flex-direction: column;
+}
+
 main {
   flex: 1;
 }
@@ -34,6 +39,7 @@ img {
 a {
     color: red;
 }
+
 
 /* Header Styling 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -448,6 +454,19 @@ header {
   font-size: 0.9rem;
 }
 
+.discord-card {
+  will-change: transform;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.discord-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.board-card-container {
+  overflow: hidden; /* Prevent layout reflow on hover scale */
+}
 /* Bio Section styling */
 
 .discord-bio {
@@ -639,18 +658,362 @@ header {
 }
 
 
+/* Mobile Optimization */
 
 
+@media (max-width: 768px) {
+  .opening-section h1 {
+    font-size: 2rem;
+  }
+  .title-container {
+    flex-direction: column;
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  .side-section {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section[style*="height"] {
+    height: 20vh !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-bg {
+    background-position: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  /* General container adjustments */
+  .about-row-1 {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .side-section {
+    padding: 0 1rem;
+  }
+
+  .title-container {
+    flex-direction: column;
+    transform: none;
+  }
+
+  .trojan-box,
+  .culture-box {
+    transform: none;
+  }
+
+  .welcome-container {
+    height: auto;
+  }
+
+  .welcome-box,
+  .title-container {
+    transform: none;
+    margin: 1rem 0;
+  }
+
+  /* Adjust meeting info section for smaller screens */
+  .meeting-info {
+    font-size: 2rem;
+  }
+
+  .meeting-note {
+    font-size: 0.9rem;
+  }
+
+  /* Footer layout tweak for smaller screens */
+  .tac-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left img {
+    margin-bottom: 1rem;
+  }
+
+  /* Reduce large fixed heights for sections */
+  section[style*="height"] {
+    height: auto !important;
+    padding: 2rem 0;
+  }
+
+  /* Fix fixed background scaling issues */
+  .fixed-bg {
+    background-size: cover;
+    transform: none;
+  }
+
+  /* FAQ grid to stack vertically */
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust Discord blocks to fit smaller screens */
+  .discord-block {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Nav bar stacks vertically */
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Remove transforms that cause layout problems */
+  .welcome-box,
+  .title-container,
+  .trojan-box,
+  .culture-box {
+    transform: none !important;
+    margin: 0.5rem 0;
+  }
+
+  .title-container {
+    flex-direction: column;
+  }
+
+  .opening-section {
+    height: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .fixed-bg {
+    background-size: cover;
+    transform: none;
+  }
+
+  .fixed-bg-alt {
+    background-size: cover;
+    transform: none;
+  }
+}
 
 
+@media (max-width: 768px) {
+  .opening-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center */
+    align-items: center;     /* horizontally center */
+    text-align: center;
+    height: 100vh;
+    padding: 2rem 1rem;
+  }
 
+  .welcome-container,
+  .title-container {
+    margin: 0.5rem 0;
+  }
 
+  .welcome-box,
+  .title-container,
+  .trojan-box,
+  .culture-box {
+    transform: none !important;
+  }
+}
 
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* Lemon Milk Italic */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
 
+/* Lemon Milk Bold */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 
+/* Lemon Milk Bold Italic */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
 
+/* Lemon Milk Medium */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
 
+/* Lemon Milk Medium Italic */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Lemon Milk Light */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Lemon Milk Light Italic */
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('fonts/LEMONMILK-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+.about-row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start; /* shift children to the left */
+  gap: 3rem;
+  margin: 3rem auto;
+}
+
+.discord-section {
+  margin-left: 100px;
+  margin-right: auto;
+  max-width: 400px; /* keep it from growing too much */
+}
+
+.side-section,
+.discord-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .about-row-1 {
+    flex-direction: column;
+  }
+
+  .side-section,
+  .discord-section {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.about-row-1 .image-container {
+  margin-left: 10rem;
+}
+
+@media (max-width: 768px) {
+  .discord-section {
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto; 
+  }
+
+  .about-row-1 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.fixed-bg, .bg-overlay, .blurred-background {
+  border: 1px solid transparent; /* clip the blur halo */
+  outline: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .fixed-bg,
+  .fixed-bg-alt {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+    transform: none !important;
+    background-size: cover !important;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply; /* NEW: blend the dark overlay with the background */
+  }
+}
+
+@media (max-width: 768px) {
+  .bg-overlay {
+    filter: none;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (max-width: 768px) {
+  .opening-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Move content towards the top */
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 10rem 1rem; 
+  }
+
+  .title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto !important;
+    width: 100%;
+    margin-top: 10rem;
+  }
+
+  .trojan-box,
+  .anime-box,
+  .culture-box {
+    transform: none !important;
+    margin: 0 auto !important;
+    display: block;
+  }
+}
 
 
 
