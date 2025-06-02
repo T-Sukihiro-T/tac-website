@@ -789,7 +789,6 @@ header {
     align-items: flex-start;
   }
 
-  /* Remove transforms that cause layout problems */
   .welcome-box,
   .title-container,
   .trojan-box,
@@ -824,8 +823,8 @@ header {
   .opening-section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* vertically center */
-    align-items: center;     /* horizontally center */
+    justify-content: center; 
+    align-items: center;     
     text-align: center;
     height: 100vh;
     padding: 2rem 1rem;
@@ -911,7 +910,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: start; /* shift children to the left */
+  justify-content: start; 
   gap: 3rem;
   margin: 3rem auto;
 }
@@ -919,7 +918,7 @@ header {
 .discord-section {
   margin-left: 100px;
   margin-right: auto;
-  max-width: 400px; /* keep it from growing too much */
+  max-width: 400px; 
 }
 
 .side-section,
@@ -958,7 +957,7 @@ header {
 }
 
 .fixed-bg, .bg-overlay, .blurred-background {
-  border: 1px solid transparent; /* clip the blur halo */
+  border: 1px solid transparent; 
   outline: none;
   box-shadow: none;
   -webkit-backdrop-filter: blur(10px);
@@ -974,7 +973,7 @@ header {
     transform: none !important;
     background-size: cover !important;
     background-color: rgba(0, 0, 0, 0.6);
-    background-blend-mode: multiply; /* NEW: blend the dark overlay with the background */
+    background-blend-mode: multiply; 
   }
 }
 
@@ -989,7 +988,7 @@ header {
   .opening-section {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Move content towards the top */
+    justify-content: flex-start; 
     align-items: center;
     text-align: center;
     height: 100vh;
@@ -1014,9 +1013,64 @@ header {
     display: block;
   }
 }
+@media (max-width: 768px) {
+  .main-header {
+    display: flex;
+    flex-direction: row; /* Make header items go in a row */
+    justify-content: space-between; /* Pushes logo left, hamburger right */
+    align-items: center; /* Center vertically */
+    padding: 0.5rem 1rem;
+  }
 
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding-left: 280px;
+  }
 
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 120px; 
+    right: 10px;
+    width: 200px;
+    border-radius: 8px;
+    padding: 1rem;
+  }
 
+  .main-nav ul.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .centered-section-alt h2 {
+    font-size: 2rem !important;
+  }
+
+  .centered-section-alt p {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
 
 
 

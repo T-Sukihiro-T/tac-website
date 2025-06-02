@@ -3,25 +3,27 @@
 //------------------------------------------------
 
     //Event listener that makes the page background follow the mouse
-    document.addEventListener("mousemove", (e) => {
-        const x = e.clientX / window.innerWidth;  // horizontal (0 to 1)
-        const y = e.clientY / window.innerHeight; // vertical (0 to 1)
+    if(window.innerWidth > 768) {
+        document.addEventListener("mousemove", (e) => {
+            const x = e.clientX / window.innerWidth;  // horizontal (0 to 1)
+            const y = e.clientY / window.innerHeight; // vertical (0 to 1)
 
-        const moveX = (x - 0.5) * 20; // range: -10% to +10%
-        const moveY = (y - 0.5) * 10; // range: -5% to +5%
+            const moveX = (x - 0.5) * 20; // range: -10% to +10%
+            const moveY = (y - 0.5) * 10; // range: -5% to +5%
 
-        const bg = document.querySelector(".fixed-bg");
-        const bg_alt = document.querySelector(".fixed-bg-alt");
+            const bg = document.querySelector(".fixed-bg");
+            const bg_alt = document.querySelector(".fixed-bg-alt");
 
-        if (bg) {
-        bg.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
-        }
+            if (bg) {
+            bg.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+            }
 
-        if (bg_alt) {
-            bg_alt.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
-        }
-    });
-
+            if (bg_alt) {
+                bg_alt.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+            }
+        });
+    }
+    
     //Event Listener for adding bacground to nav bar after scroll
     const header = document.querySelector('.main-header');
 
@@ -100,3 +102,5 @@
                 }
         });
     });
+
+  

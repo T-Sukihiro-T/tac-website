@@ -29,6 +29,8 @@
 
             <div class="header-logo"> <a href = "index.html"> <img class = "header-logo" src = "images/tac_logo.png"> </a> </div>
 
+            <button class="hamburger" aria-label="Menu">&#9776;</button>
+
             <nav class="nav main-nav">
                 <ul>
                     <li><a href="index.html#about-row-1">About</a></li>
@@ -83,6 +85,18 @@
                     </div>
                 </div>
             </section>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const hamburger = document.querySelector('.hamburger');
+                    const navMenu = document.querySelector('.main-nav ul');
+
+                    hamburger.addEventListener('click', () => {
+                        navMenu.classList.toggle('active');
+                    });
+                });
+            </script>
+
             <script src = "main.js"></script>
         </main>
         <footer class="tac-footer">
