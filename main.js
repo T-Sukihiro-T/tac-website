@@ -27,13 +27,18 @@
     //Event Listener for adding bacground to nav bar after scroll
     const header = document.querySelector('.main-header');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+    if(window.innerWidth > 768) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+            } else {
+            header.classList.remove('scrolled');
+            }
+        });
+    }
+    else{
         header.classList.add('scrolled');
-        } else {
-        header.classList.remove('scrolled');
-        }
-    });
+    }
 
     //Event listener to dim bg when scrolled past landing page
     const overlay = document.querySelector('.bg-overlay');
