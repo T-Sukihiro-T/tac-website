@@ -1073,15 +1073,15 @@ header {
 }
 
 @media (max-width: 768px) {
-  .fixed-bg {
-    height: 100dvh; 
+  html, body {
+    height: 100%;
   }
 
-  body {
-    min-height: 100dvh; 
+  .fixed-bg {
+    height: 100%;
+    background-attachment: scroll; /* turn off parallax glitching */
   }
 }
-
 
 
 
