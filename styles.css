@@ -1072,6 +1072,16 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .fixed-bg {
+    height: 100vh; /* ensure full viewport height on mobile */
+  }
+
+  body {
+    min-height: 100vh; /* force body to be at least full viewport */
+  }
+}
+
 
 
 
