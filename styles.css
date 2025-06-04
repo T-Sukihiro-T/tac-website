@@ -1081,6 +1081,14 @@ header {
     height: 100%;
     background-attachment: scroll; 
   }
+
+  .fixed-bg {
+    height: 100dvh;
+  }
+
+  footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 
