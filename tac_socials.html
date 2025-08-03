@@ -133,7 +133,7 @@
             <section style="height: 25vh;"></section>
 
             <script>
-                fetch("https://760f14d7-d65b-4d56-b9d9-2944cfa51ef1-00-zngdw79vxtlp.kirk.replit.dev/stats")
+                fetch("http://192.168.0.159:3000/stats")
                     .then(response => response.json())
                     .then(data => {
                         document.getElementById("total-members").innerText = data.total;
@@ -145,7 +145,7 @@
             </script>
 
             <script>
-                fetch("https://760f14d7-d65b-4d56-b9d9-2944cfa51ef1-00-zngdw79vxtlp.kirk.replit.dev/instagram-feed")
+                fetch("http://192.168.0.159:3000/instagram-feed")
                 .then(response => response.json())
                 .then(data => {
                     const feed = document.getElementById("instagram-feed");
