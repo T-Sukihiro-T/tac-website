@@ -133,7 +133,7 @@
             <section style="height: 25vh;"></section>
 
             <script>
-                fetch("http://192.168.0.159:3000/stats")
+                fetch("https://5dda80788630.ngrok-free.app/stats")
                     .then(response => response.json())
                     .then(data => {
                         document.getElementById("total-members").innerText = data.total;
@@ -145,7 +145,7 @@
             </script>
 
             <script>
-                fetch("http://192.168.0.159:3000/instagram-feed")
+                fetch("https://5dda80788630.ngrok-free.app/instagram-feed")
                 .then(response => response.json())
                 .then(data => {
                     const feed = document.getElementById("instagram-feed");
