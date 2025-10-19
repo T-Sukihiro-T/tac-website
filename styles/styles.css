@@ -146,7 +146,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/home-image.jpg");
+    background-image: url("home-image.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: 50% 50%;
@@ -173,7 +173,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/home-image.jpg");
+    background-image: url("home-image.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: 50% 50%;
